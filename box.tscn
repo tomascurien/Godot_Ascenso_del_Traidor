@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://vhxm6qhrjbgb"]
+
+[ext_resource type="Script" uid="uid://gvbow7uvdx6n" path="res://box.gd" id="1_g2tbl"]
+[ext_resource type="Texture2D" uid="uid://jtkn5folpb12" path="res://assets/sprites/castle/CastleTiles.png" id="2_oq5cr"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oq5cr"]
+size = Vector2(28, 29)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bqn3j"]
+size = Vector2(30, 31)
+
+[node name="box" type="StaticBody2D"]
+script = ExtResource("1_g2tbl")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(3.5, 4)
+scale = Vector2(1.21875, 1.33333)
+texture = ExtResource("2_oq5cr")
+hframes = 8
+vframes = 9
+frame = 36
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(4, 4.5)
+shape = SubResource("RectangleShape2D_oq5cr")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(3, 3.5)
+shape = SubResource("RectangleShape2D_bqn3j")
